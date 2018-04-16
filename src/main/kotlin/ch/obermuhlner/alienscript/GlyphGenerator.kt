@@ -13,16 +13,27 @@ import javax.imageio.ImageIO
 
 class GlyphGenerator(val random: Random = Random()) {
 
-    private val width = 4
-    private val height = 3
+    private val width = nextInt(3..7)
+    private val height = nextInt(3..7)
 
-    private val strokeCountRange = 1 .. 3
-    private val pointCountRange = 2 .. 6
+    private val strokeCountRange = nextInt(1..2) .. nextInt(2..5)
+    private val pointCountRange = nextInt(2..4) .. nextInt(2..6)
 
-    private val hasBaseline = true
-    private val baselineY = 1
+    private val hasBaseline = random.nextDouble() < 0.7
+    private val baselineY = nextInt(0, height)
 
-    private val curveProbability = 0.9
+    private val curveProbability = if (random.nextDouble() < 0.1) 0.0 else random.nextDouble()
+
+    init {
+        println("width = $width")
+        println("height = $height")
+        println("strokeCountRange = $strokeCountRange")
+        println("pointCountRange = $pointCountRange")
+        println("hasBaseline = $hasBaseline")
+        println("baselineY = $baselineY")
+        println("curveProbability = $curveProbability")
+        println()
+    }
 
     fun create(): Glyph {
         val strokes = mutableListOf<Stroke>()
@@ -36,13 +47,15 @@ class GlyphGenerator(val random: Random = Random()) {
                 if (hasBaseline) {
                     if (strokeIndex == 0 && pointIndex == 0) {
                         points.add(nextBaselineStartPoint())
-                    } else if (strokeIndex == strokeCount-1 && pointIndex == pointCount-1) {
-                        points.add(nextBaselineEndPoint())
-                    } else {
-                        points.add(nextPoint())
                     }
-                } else {
-                    points.add(nextPoint())
+                }
+
+                points.add(nextPoint())
+
+                if (hasBaseline) {
+                    if (strokeIndex == strokeCount-1 && pointIndex == pointCount-1) {
+                        points.add(nextBaselineEndPoint())
+                    }
                 }
             }
 
@@ -55,7 +68,8 @@ class GlyphGenerator(val random: Random = Random()) {
     private fun nextBaselineStartPoint(): Point {
         val x = 0
         val y = baselineY
-        if (curveProbability > 0) {
+
+        if (random.nextDouble() < curveProbability) {
             return Point(x, y, 1, 0,-1, 0)
         } else {
             return Point(x, y)
@@ -65,7 +79,8 @@ class GlyphGenerator(val random: Random = Random()) {
     private fun nextBaselineEndPoint(): Point {
         val x = width
         val y = baselineY
-        if (curveProbability > 0) {
+
+        if (random.nextDouble() < curveProbability) {
             return Point(x, y, 1, 0,-1, 0)
         } else {
             return Point(x, y)
@@ -76,7 +91,7 @@ class GlyphGenerator(val random: Random = Random()) {
         val x = random.nextInt(width)
         val y = random.nextInt(height)
 
-        if (hasBaseline && random.nextDouble() < curveProbability) {
+        if (random.nextDouble() < curveProbability) {
             val bezierMinX = if (x == 0) 0 else -1
             val bezierMaxX = if (x == width - 1) 0 else 1
             val bezierMinY = if (y == 0) 0 else -1
@@ -88,11 +103,11 @@ class GlyphGenerator(val random: Random = Random()) {
     }
 
     private fun nextInt(range: IntRange): Int {
-        return nextInt(range.first, range.endInclusive)
+        return nextInt(range.first, range.last)
     }
 
     private fun nextInt(min: Int, max: Int): Int {
-        if (min == max) {
+        if (min >= max) {
             return min
         }
         return random.nextInt(max - min) + min
@@ -113,17 +128,19 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
     }
 
     private fun createGlyph(glyphGenerator: GlyphGenerator, glyphs: Set<Glyph>): Glyph {
-        var glyph = glyphGenerator.create()
-        while (glyphs.contains(glyph)) {
-            glyph = glyphGenerator.create()
+        for (i in 0..1000) {
+            val glyph = glyphGenerator.create()
+            if (!glyphs.contains(glyph)) {
+                return glyph
+            }
         }
-        return glyph
+        throw IllegalArgumentException("Failed to generate distinct glyph.\n$glyphs" )
     }
 }
 
 class GlyphToImageConverter {
-    val width = 64
-    val height = 64
+    val width = 40
+    val height = 40
     val insetLeft = 2
     val insetRight = 2
     val insetTop = 2
@@ -176,13 +193,16 @@ fun save(image: RenderedImage, name: String) {
 }
 
 fun main(args: Array<String>) {
-    val generator = FontGenerator(GlyphGenerator())
-    val font = generator.create()
+    val offset = 0L;
+    for (f in 1..9) {
+        println("Generating font #$f")
+        val generator = FontGenerator(GlyphGenerator(Random(f.toLong() + offset)))
+        val font = generator.create()
 
-    val converter = GlyphToImageConverter()
-    for(entry in font.glyphs) {
-        println("${entry.key} : ${entry.value}")
-        val image = converter.convert(entry.value)
-        save(image, "docs/fonts/example1/${entry.key}")
+        val converter = GlyphToImageConverter()
+        for(entry in font.glyphs) {
+            val image = converter.convert(entry.value)
+            save(image, "docs/fonts/example$f/${entry.key}")
+        }
     }
 }
