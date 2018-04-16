@@ -13,16 +13,36 @@ import javax.imageio.ImageIO
 
 class GlyphGenerator(val random: Random = Random()) {
 
-    private val width = nextInt(3..7)
-    private val height = nextInt(3..7)
+    private val width = nextInt(3..8)
+    private val height = nextInt(2..5)
+
+    private val gridProbabilities = DoubleArray(width * height)
+    private val totalGridProbability: Double = run {
+        var total = 0.0
+        for (y in 0 until height) {
+            val yRandom = random.nextDouble()
+            for (x in 0 until width) {
+                val xRandom = random.nextDouble()
+
+                val cellRandom = random.nextDouble()
+                val r = xRandom + yRandom + cellRandom
+                total += r * r
+
+                val index = x + y*width
+                gridProbabilities[index] = total
+
+            }
+        }
+        total
+    }
 
     private val strokeCountRange = nextInt(1..2) .. nextInt(2..5)
     private val pointCountRange = nextInt(2..4) .. nextInt(2..6)
 
-    private val hasBaseline = random.nextDouble() < 0.7
+    private val hasBaseline = random.nextDouble() < 0.6
     private val baselineY = nextInt(0, height)
 
-    private val curveProbability = if (random.nextDouble() < 0.1) 0.0 else random.nextDouble()
+    private val curveProbability = if (random.nextDouble() < 0.05) 0.0 else random.nextDouble()
 
     init {
         println("width = $width")
@@ -88,8 +108,9 @@ class GlyphGenerator(val random: Random = Random()) {
     }
 
     private fun nextPoint(): Point {
-        val x = random.nextInt(width)
-        val y = random.nextInt(height)
+        val randomGridIndex = nextGridIndex()
+        val x = randomGridIndex % width
+        val y = randomGridIndex / width
 
         if (random.nextDouble() < curveProbability) {
             val bezierMinX = if (x == 0) 0 else -1
@@ -100,6 +121,16 @@ class GlyphGenerator(val random: Random = Random()) {
         } else {
             return Point(x, y)
         }
+    }
+
+    private fun nextGridIndex(): Int {
+        val r = random.nextDouble() * totalGridProbability
+        for (i in gridProbabilities.indices) {
+            if (r < gridProbabilities[i]) {
+                return i
+            }
+        }
+        return 0
     }
 
     private fun nextInt(range: IntRange): Int {
@@ -127,14 +158,14 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
         return Font(glyphsMap)
     }
 
-    private fun createGlyph(glyphGenerator: GlyphGenerator, glyphs: Set<Glyph>): Glyph {
+    private fun createGlyph(glyphGenerator: GlyphGenerator, knownGlyphs: Set<Glyph>): Glyph {
         for (i in 0..1000) {
             val glyph = glyphGenerator.create()
-            if (!glyphs.contains(glyph)) {
+            if (!knownGlyphs.contains(glyph)) {
                 return glyph
             }
         }
-        throw IllegalArgumentException("Failed to generate distinct glyph.\n$glyphs" )
+        throw IllegalArgumentException("Failed to generate distinct glyph.\n$knownGlyphs" )
     }
 }
 

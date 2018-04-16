@@ -2,7 +2,7 @@
 
 ## Examples
 
-## Example 1
+### Example 1
 
 ![a](docs/fonts/example1/a.png)
 ![b](docs/fonts/example1/b.png)
@@ -31,7 +31,7 @@
 ![y](docs/fonts/example1/y.png)
 ![z](docs/fonts/example1/z.png)
 
-## Example 2
+### Example 2
 
 ![a](docs/fonts/example2/a.png)
 ![b](docs/fonts/example2/b.png)
@@ -60,7 +60,7 @@
 ![y](docs/fonts/example2/y.png)
 ![z](docs/fonts/example2/z.png)
 
-## Example 3
+### Example 3
 
 ![a](docs/fonts/example3/a.png)
 ![b](docs/fonts/example3/b.png)
@@ -89,7 +89,7 @@
 ![y](docs/fonts/example3/y.png)
 ![z](docs/fonts/example3/z.png)
 
-## Example 4
+### Example 4
 
 ![a](docs/fonts/example4/a.png)
 ![b](docs/fonts/example4/b.png)
@@ -118,7 +118,7 @@
 ![y](docs/fonts/example4/y.png)
 ![z](docs/fonts/example4/z.png)
 
-## Example 5
+### Example 5
 
 ![a](docs/fonts/example5/a.png)
 ![b](docs/fonts/example5/b.png)
@@ -147,7 +147,7 @@
 ![y](docs/fonts/example5/y.png)
 ![z](docs/fonts/example5/z.png)
 
-## Example 6
+### Example 6
 
 ![a](docs/fonts/example6/a.png)
 ![b](docs/fonts/example6/b.png)
@@ -176,7 +176,7 @@
 ![y](docs/fonts/example6/y.png)
 ![z](docs/fonts/example6/z.png)
 
-## Example 7
+### Example 7
 
 ![a](docs/fonts/example7/a.png)
 ![b](docs/fonts/example7/b.png)
@@ -205,7 +205,7 @@
 ![y](docs/fonts/example7/y.png)
 ![z](docs/fonts/example7/z.png)
 
-## Example 8
+### Example 8
 
 ![a](docs/fonts/example8/a.png)
 ![b](docs/fonts/example8/b.png)
@@ -234,7 +234,7 @@
 ![y](docs/fonts/example8/y.png)
 ![z](docs/fonts/example8/z.png)
 
-## Example 9
+### Example 9
 
 ![a](docs/fonts/example9/a.png)
 ![b](docs/fonts/example9/b.png)
