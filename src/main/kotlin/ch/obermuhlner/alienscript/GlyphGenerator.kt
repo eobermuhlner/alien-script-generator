@@ -16,28 +16,13 @@ class GlyphGenerator(val random: Random = Random()) {
     private val width = nextInt(3..8)
     private val height = nextInt(2..5)
 
-    private val gridProbabilities = DoubleArray(width * height)
-    private val totalGridProbability: Double = run {
-        var total = 0.0
-        for (y in 0 until height) {
-            val yRandom = random.nextDouble()
-            for (x in 0 until width) {
-                val xRandom = random.nextDouble()
+    private val gridBorderProbabilityRange = 0.0 .. 5.0
+    private val gridXProbabilityRange = 0.0 .. 3.0
+    private val gridYProbabilityRange = 0.0 .. 3.0
+    private val gridCellProbabilityRange = 0.0 .. 3.0
 
-                val cellRandom = random.nextDouble()
-                val r = xRandom + yRandom + cellRandom
-                total += r * r
-
-                val index = x + y*width
-                gridProbabilities[index] = total
-
-            }
-        }
-        total
-    }
-
-    private val strokeCountRange = nextInt(1..2) .. nextInt(2..5)
-    private val pointCountRange = nextInt(2..4) .. nextInt(2..6)
+    private val strokeCountRange = nextInt(1..2) .. nextInt(2..4)
+    private val pointCountRange = nextInt(2..4) .. nextInt(2..5)
 
     private val hasBaseline = random.nextDouble() < 0.6
     private val baselineY = nextInt(0, height)
@@ -46,11 +31,39 @@ class GlyphGenerator(val random: Random = Random()) {
     private val curveRangeX = nextInt(-width, 0) .. nextInt(0, width)
     private val curveRangeY = nextInt(-height, 0) .. nextInt(0, height)
 
+    private val gridProbabilities = DoubleArray(width * height)
+    private val totalGridProbability: Double = run {
+        var total = 0.0
+        for (y in 0 until height) {
+            val yRandom = nextDouble(gridYProbabilityRange)
+            for (x in 0 until width) {
+                val xRandom = nextDouble(gridXProbabilityRange)
+                val isBorderX = x == 0 || x == width - 1
+                val isBorderY = y == 0 || y == height - 1
+                val borderXRandom = if (isBorderX) nextDouble(gridBorderProbabilityRange) else 0.0
+                val borderYRandom = if (isBorderY) nextDouble(gridBorderProbabilityRange) else 0.0
+
+                val cellRandom = nextDouble(gridCellProbabilityRange)
+                val r = borderXRandom + borderYRandom + xRandom + yRandom + cellRandom
+                total += r * r
+
+                val index = x + y*width
+                gridProbabilities[index] = total
+            }
+        }
+        total
+    }
+
     init {
         println("width = $width")
         println("height = $height")
         println("strokeCountRange = $strokeCountRange")
         println("pointCountRange = $pointCountRange")
+        println("gridBorderProbabilityRange = $gridBorderProbabilityRange")
+        println("gridXProbabilityRange = $gridXProbabilityRange")
+        println("gridYProbabilityRange = $gridYProbabilityRange")
+        println("gridCellProbabilityRange = $gridCellProbabilityRange")
+
         println("hasBaseline = $hasBaseline")
         println("baselineY = $baselineY")
         println("curveProbability = $curveProbability")
@@ -146,6 +159,18 @@ class GlyphGenerator(val random: Random = Random()) {
             return min
         }
         return random.nextInt(max - min) + min
+    }
+
+    private fun nextDouble(range: ClosedFloatingPointRange<Double>): Double {
+        return nextDouble(range.start, range.endInclusive)
+
+    }
+
+    private fun nextDouble(min: Double, max: Double): Double {
+        if (min >= max) {
+            return min
+        }
+        return random.nextDouble() * (max - min) + min
     }
 
     private fun clamp(value: Int, min: Int, max: Int): Int {
