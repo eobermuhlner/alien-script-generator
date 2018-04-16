@@ -43,6 +43,8 @@ class GlyphGenerator(val random: Random = Random()) {
     private val baselineY = nextInt(0, height)
 
     private val curveProbability = if (random.nextDouble() < 0.05) 0.0 else random.nextDouble()
+    private val curveRangeX = nextInt(-width, 0) .. nextInt(0, width)
+    private val curveRangeY = nextInt(-height, 0) .. nextInt(0, height)
 
     init {
         println("width = $width")
@@ -52,6 +54,8 @@ class GlyphGenerator(val random: Random = Random()) {
         println("hasBaseline = $hasBaseline")
         println("baselineY = $baselineY")
         println("curveProbability = $curveProbability")
+        println("curveRangeX = $curveRangeX")
+        println("curveRangeY = $curveRangeY")
         println()
     }
 
@@ -90,7 +94,7 @@ class GlyphGenerator(val random: Random = Random()) {
         val y = baselineY
 
         if (random.nextDouble() < curveProbability) {
-            return Point(x, y, 1, 0,-1, 0)
+            return Point(x, y, x+1, y,x-1, y)
         } else {
             return Point(x, y)
         }
@@ -101,7 +105,7 @@ class GlyphGenerator(val random: Random = Random()) {
         val y = baselineY
 
         if (random.nextDouble() < curveProbability) {
-            return Point(x, y, 1, 0,-1, 0)
+            return Point(x, y, x+1, y,x-1, y)
         } else {
             return Point(x, y)
         }
@@ -113,11 +117,11 @@ class GlyphGenerator(val random: Random = Random()) {
         val y = randomGridIndex / width
 
         if (random.nextDouble() < curveProbability) {
-            val bezierMinX = if (x == 0) 0 else -1
-            val bezierMaxX = if (x == width - 1) 0 else 1
-            val bezierMinY = if (y == 0) 0 else -1
-            val bezierMaxY = if (y == height - 1) 0 else 1
-            return Point(x, y, nextInt(bezierMinX, bezierMaxX), nextInt(bezierMinY, bezierMaxY), nextInt(bezierMinX, bezierMaxX), nextInt(bezierMinY, bezierMaxY))
+            val bezierStartX = clamp(x + nextInt(curveRangeX), 0, width)
+            val bezierStartY = clamp(y + nextInt(curveRangeY), 0, height)
+            val bezierEndX = clamp(x + nextInt(curveRangeX), 0, width)
+            val bezierEndY = clamp(y + nextInt(curveRangeY), 0, height)
+            return Point(x, y, bezierStartX, bezierStartY, bezierEndX, bezierEndY)
         } else {
             return Point(x, y)
         }
@@ -142,6 +146,16 @@ class GlyphGenerator(val random: Random = Random()) {
             return min
         }
         return random.nextInt(max - min) + min
+    }
+
+    private fun clamp(value: Int, min: Int, max: Int): Int {
+        if (value < min) {
+            return min
+        }
+        if (value > max) {
+            return max
+        }
+        return value
     }
 }
 
@@ -177,6 +191,8 @@ class GlyphToImageConverter {
     val insetTop = 2
     val insetBottom = 2
 
+    val strokeWidth = 3.0f
+
     fun convert(glyph: Glyph): RenderedImage {
         val image = BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB)
 
@@ -184,7 +200,7 @@ class GlyphToImageConverter {
         gc.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON)
 
         gc.paint = Color.BLACK
-        gc.stroke = BasicStroke(3.0f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND)
+        gc.stroke = BasicStroke(strokeWidth, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND)
 
         for (stroke in glyph.strokes) {
             val path = GeneralPath()
@@ -198,8 +214,8 @@ class GlyphToImageConverter {
                 } else {
                     val lastPoint = stroke.points[pointIndex-1]
                     path.curveTo(
-                            toX(lastPoint.x + lastPoint.bezierStartX, glyph), toY(lastPoint.y + lastPoint.bezierStartY, glyph),
-                            toX(point.x + point.bezierEndX, glyph), toY(point.y + point.bezierEndY, glyph),
+                            toX(lastPoint.bezierStartX, glyph), toY(lastPoint.bezierStartY, glyph),
+                            toX(point.bezierEndX, glyph), toY(point.bezierEndY, glyph),
                             toX(point.x, glyph), toY(point.y, glyph))
                 }
             }
