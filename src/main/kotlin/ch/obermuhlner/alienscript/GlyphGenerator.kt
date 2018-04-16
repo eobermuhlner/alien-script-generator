@@ -183,17 +183,20 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
     }
 }
 
-class GlyphToImageConverter {
-    val width = 40
-    val height = 40
+class GlyphToImageConverter(val random: Random = Random()) {
+    val widthStep = random.nextInt(5) + 7
+    val heightStep = random.nextInt(5) + 10
     val insetLeft = 2
     val insetRight = 2
     val insetTop = 2
     val insetBottom = 2
 
-    val strokeWidth = 3.0f
+    val strokeWidth = (random.nextDouble() * 3 + 1).toFloat()
 
     fun convert(glyph: Glyph): RenderedImage {
+        val width = glyph.width * widthStep + insetLeft + insetRight
+        val height = glyph.height * heightStep + insetTop + insetBottom
+
         val image = BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB)
 
         val gc = image.createGraphics()
@@ -226,8 +229,8 @@ class GlyphToImageConverter {
         return image
     }
 
-    private fun toX(x: Int, glyph: Glyph) = x.toDouble() * (width - insetLeft - insetRight) / glyph.width + insetLeft
-    private fun toY(y: Int, glyph: Glyph) = y.toDouble() * (height - insetTop - insetBottom) / glyph.height + insetTop
+    private fun toX(x: Int, glyph: Glyph) = x.toDouble() * widthStep + insetLeft
+    private fun toY(y: Int, glyph: Glyph) = y.toDouble() * heightStep + insetTop
 }
 
 fun save(image: RenderedImage, name: String) {
@@ -246,7 +249,7 @@ fun main(args: Array<String>) {
         val generator = FontGenerator(GlyphGenerator(Random(f.toLong() + offset)))
         val font = generator.create()
 
-        val converter = GlyphToImageConverter()
+        val converter = GlyphToImageConverter(Random(f.toLong() + offset))
         for(entry in font.glyphs) {
             val image = converter.convert(entry.value)
             save(image, "docs/fonts/example$f/${entry.key}")
