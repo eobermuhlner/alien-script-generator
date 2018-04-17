@@ -91,6 +91,52 @@ class GlyphGenerator(
         println()
     }
 
+    fun digitGlyphGenerator(): GlyphGenerator {
+        return GlyphGenerator(
+                random,
+                width=width,
+                height=height,
+                gridBorderProbabilityRange=gridBorderProbabilityRange,
+                gridXProbabilityRange=gridXProbabilityRange,
+                gridYProbabilityRange=gridYProbabilityRange,
+                gridCellProbabilityRange=gridCellProbabilityRange,
+
+                hasStartBaseline=hasStartBaseline,
+                hasEndBaseline=hasEndBaseline,
+                baselineY=baselineY,
+
+                curveProbability=randomDelta(random, curveProbability, -0.3, 0.3, 0.0, 1.0),
+                curveRangeX=curveRangeX,
+                curveRangeY=curveRangeY,
+
+                strokeCountRange=strokeCountRange.first .. strokeCountRange.last/2,
+                primaryPointCountRange=primaryPointCountRange.first .. Math.max(primaryPointCountRange.last/2, 2),
+                secondaryPointCountRange=secondaryPointCountRange)
+    }
+
+    fun punctuationGlyphGenerator(): GlyphGenerator {
+        return GlyphGenerator(
+                random,
+                width=width,
+                height=height,
+                gridBorderProbabilityRange=gridBorderProbabilityRange,
+                gridXProbabilityRange=gridXProbabilityRange,
+                gridYProbabilityRange=gridYProbabilityRange,
+                gridCellProbabilityRange=gridCellProbabilityRange,
+
+                hasStartBaseline=false,
+                hasEndBaseline=false,
+                baselineY=baselineY,
+
+                curveProbability=curveProbability,
+                curveRangeX=curveRangeX,
+                curveRangeY=curveRangeY,
+
+                strokeCountRange=randomInt(random, 1..2) .. randomInt(random, 2..3),
+                primaryPointCountRange=randomInt(random, 2..3) .. randomInt(random, 3..4),
+                secondaryPointCountRange=randomInt(random, 1..2) .. randomInt(random, 2..4))
+    }
+
     fun create(): Glyph {
         val strokes = mutableListOf<Stroke>()
         val strokeCount = randomInt(random, strokeCountRange)
@@ -188,8 +234,17 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
     fun create(): Font {
         val glyphsMap = mutableMapOf<String, Glyph>()
         for(key in listOf("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")) {
-            val glyph = createGlyph(glyphGenerator)
-            glyphsMap[key] = glyph
+            glyphsMap[key] = createGlyph(glyphGenerator)
+        }
+        
+        val digitGlyphGenerator = glyphGenerator.digitGlyphGenerator()
+        for(key in listOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")) {
+            glyphsMap[key] = createGlyph(digitGlyphGenerator)
+        }
+
+        val punctuationGlyphGenerator = glyphGenerator.punctuationGlyphGenerator()
+        for(key in listOf("_point", "_comma", "_colon", "_semicolon", "_exclamation", "_question", "_plus", "_minus", "_mult", "_div", "_equal")) {
+            glyphsMap[key] = createGlyph(punctuationGlyphGenerator)
         }
 
         glyphsMap["_space"] = glyphGenerator.createSpace()
@@ -311,6 +366,17 @@ private fun <T> randomPick(random: Random, vararg elements: T): T {
     return elements[r]
 }
 
+private fun randomDelta(random: Random, value: Double, minDelta: Double, maxDelta: Double, min: Double, max: Double): Double {
+    if (random.nextBoolean()) {
+        val v = value + minDelta
+        if (v in min..max) {
+            return v
+        }
+    }
+
+    return value + maxDelta
+}
+
 private fun randomInt(random: Random, range: IntRange, allowZero: Boolean = true): Int {
     return randomInt(random, range.first, range.last, allowZero)
 }
@@ -341,6 +407,16 @@ private fun randomDouble(random: Random, min: Double, max: Double): Double {
 }
 
 private fun clamp(value: Int, min: Int, max: Int): Int {
+    if (value < min) {
+        return min
+    }
+    if (value > max) {
+        return max
+    }
+    return value
+}
+
+private fun clamp(value: Double, min: Double, max: Double): Double{
     if (value < min) {
         return min
     }
