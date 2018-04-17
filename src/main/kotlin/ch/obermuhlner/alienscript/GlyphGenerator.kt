@@ -21,7 +21,8 @@ class GlyphGenerator(
         private val gridYProbabilityRange: ClosedFloatingPointRange<Double> = 0.0 .. 10.0,
         private val gridCellProbabilityRange: ClosedFloatingPointRange<Double> = 0.0 .. 10.0,
 
-        private val hasBaseline: Boolean = random.nextDouble() < 0.6,
+        private val hasStartBaseline: Boolean = random.nextDouble() < 0.6,
+        private val hasEndBaseline: Boolean = hasStartBaseline,
         private val baselineY: Int = randomInt(random, 0, height),
 
         private val curveProbability: Double = if (random.nextDouble() < 0.05) 0.0 else random.nextDouble(),
@@ -81,7 +82,8 @@ class GlyphGenerator(
         println("gridYProbabilityRange = $gridYProbabilityRange")
         println("gridCellProbabilityRange = $gridCellProbabilityRange")
 
-        println("hasBaseline = $hasBaseline")
+        println("hasStartBaseline = $hasStartBaseline")
+        println("hasEndBaseline = $hasEndBaseline")
         println("baselineY = $baselineY")
         println("curveProbability = $curveProbability")
         println("curveRangeX = $curveRangeX")
@@ -101,7 +103,7 @@ class GlyphGenerator(
             val pointCount = randomInt(random, if (strokeIndex == 0) primaryPointCountRange else secondaryPointCountRange)
 
             for (pointIndex in 0 until pointCount) {
-                if (hasBaseline) {
+                if (hasStartBaseline) {
                     if (strokeIndex == baselineStartStrokeIndex && pointIndex == 0) {
                         //points.add(nextBaselineStartPoint(-1, 0))
                         points.add(nextBaselineStartPoint())
@@ -110,7 +112,7 @@ class GlyphGenerator(
 
                 points.add(nextPoint())
 
-                if (hasBaseline) {
+                if (hasEndBaseline) {
                     if (strokeIndex == baselineEndStrokeIndex && pointIndex == pointCount-1) {
                         points.add(nextBaselineEndPoint())
                         //points.add(nextBaselineEndPoint(1, 0))
@@ -122,6 +124,10 @@ class GlyphGenerator(
         }
 
         return Glyph(width, height, strokes)
+    }
+
+    fun createSpace(): Glyph {
+        return Glyph(width, height, listOf())
     }
 
     private fun nextBaselineStartPoint(deltaX: Int = 0, deltaY: Int = 0): Point {
@@ -185,6 +191,9 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
             val glyph = createGlyph(glyphGenerator)
             glyphsMap[key] = glyph
         }
+
+        glyphsMap["_space"] = glyphGenerator.createSpace()
+
         return Font(glyphsMap)
     }
 
@@ -373,7 +382,7 @@ fun createLargeGlyph(seed: Long = 0) {
             gridXProbabilityRange = 0.0 .. 0.0,
             gridYProbabilityRange = 0.0 .. 0.0,
             gridCellProbabilityRange = 0.0 .. 0.0,
-            hasBaseline = true,
+            hasStartBaseline = true,
             baselineY = 1,
             curveProbability = 1.0,
             curveRangeX = -1 .. 1,
