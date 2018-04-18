@@ -26,6 +26,7 @@ class GlyphGenerator(
         private val baselineY: Int = randomInt(random, 0, height),
 
         private val curveProbability: Double = if (random.nextDouble() < 0.05) 0.0 else random.nextDouble(),
+        private val curveUseGridProbability: Double = random.nextDouble(),
         private val curveRangeX: IntRange = randomInt(random, -width, 0) .. randomInt(random, 0, width),
         private val curveRangeY: IntRange = randomInt(random, -height, 0) .. randomInt(random, 0, height),
 
@@ -74,9 +75,6 @@ class GlyphGenerator(
     init {
         println("width = $width")
         println("height = $height")
-        println("strokeCountRange = $strokeCountRange")
-        println("primaryPointCountRange = $primaryPointCountRange")
-        println("secondaryPointCountRange = $secondaryPointCountRange")
         println("gridBorderProbabilityRange = $gridBorderProbabilityRange")
         println("gridXProbabilityRange = $gridXProbabilityRange")
         println("gridYProbabilityRange = $gridYProbabilityRange")
@@ -85,9 +83,15 @@ class GlyphGenerator(
         println("hasStartBaseline = $hasStartBaseline")
         println("hasEndBaseline = $hasEndBaseline")
         println("baselineY = $baselineY")
+
         println("curveProbability = $curveProbability")
+        println("curveUseGridProbability = $curveUseGridProbability")
         println("curveRangeX = $curveRangeX")
         println("curveRangeY = $curveRangeY")
+
+        println("strokeCountRange = $strokeCountRange")
+        println("primaryPointCountRange = $primaryPointCountRange")
+        println("secondaryPointCountRange = $secondaryPointCountRange")
         println()
     }
 
@@ -106,6 +110,7 @@ class GlyphGenerator(
                 baselineY=baselineY,
 
                 curveProbability=randomDelta(random, curveProbability, -0.3, 0.3, 0.0, 1.0),
+                curveUseGridProbability=curveUseGridProbability,
                 curveRangeX=curveRangeX,
                 curveRangeY=curveRangeY,
 
@@ -129,6 +134,7 @@ class GlyphGenerator(
                 baselineY=baselineY,
 
                 curveProbability=curveProbability,
+                curveUseGridProbability=curveUseGridProbability,
                 curveRangeX=curveRangeX,
                 curveRangeY=curveRangeY,
 
@@ -204,11 +210,21 @@ class GlyphGenerator(
         val y = randomGridIndex / width
 
         if (random.nextDouble() < curveProbability) {
-            val bezierStartX = clamp(x + randomInt(random, curveRangeX, false), 0, width)
-            val bezierStartY = clamp(y + randomInt(random, curveRangeY, false), 0, height)
-            val bezierEndX = clamp(x + randomInt(random, curveRangeX, false), 0, width)
-            val bezierEndY = clamp(y + randomInt(random, curveRangeY, false), 0, height)
-            return Point(x, y, bezierStartX, bezierStartY, bezierEndX, bezierEndY)
+            if (random.nextDouble() < curveUseGridProbability) {
+                val bezierStartGridIndex = nextGridIndex()
+                val bezierStartX = bezierStartGridIndex % width
+                val bezierStartY = bezierStartGridIndex / width
+                val bezierEndGridIndex = nextGridIndex()
+                val bezierEndX = bezierEndGridIndex % width
+                val bezierEndY = bezierEndGridIndex / width
+                return Point(x, y, bezierStartX, bezierStartY, bezierEndX, bezierEndY)
+            } else {
+                val bezierStartX = clamp(x + randomInt(random, curveRangeX, false), 0, width)
+                val bezierStartY = clamp(y + randomInt(random, curveRangeY, false), 0, height)
+                val bezierEndX = clamp(x + randomInt(random, curveRangeX, false), 0, width)
+                val bezierEndY = clamp(y + randomInt(random, curveRangeY, false), 0, height)
+                return Point(x, y, bezierStartX, bezierStartY, bezierEndX, bezierEndY)
+            }
         } else {
             return Point(x, y)
         }
