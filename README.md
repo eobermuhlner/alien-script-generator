@@ -4,6 +4,8 @@
 
 ### Example 1
 
+#### Letters
+
 ![a](docs/fonts/example1/a.png)
 ![b](docs/fonts/example1/b.png)
 ![c](docs/fonts/example1/c.png)
@@ -31,7 +33,37 @@
 ![y](docs/fonts/example1/y.png)
 ![z](docs/fonts/example1/z.png)
 
+#### Digits
+
+![0](docs/fonts/example1/0.png)
+![1](docs/fonts/example1/1.png)
+![2](docs/fonts/example1/2.png)
+![3](docs/fonts/example1/3.png)
+![4](docs/fonts/example1/4.png)
+![5](docs/fonts/example1/5.png)
+![6](docs/fonts/example1/6.png)
+![7](docs/fonts/example1/7.png)
+![8](docs/fonts/example1/8.png)
+![9](docs/fonts/example1/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example1/_point.png)
+![_comma](docs/fonts/example1/_comma.png)
+![_colon](docs/fonts/example1/_colon.png)
+![_semicolon](docs/fonts/example1/_semicolon.png)
+![_exclamation](docs/fonts/example1/_exclamation.png)
+![_question](docs/fonts/example1/_question.png)
+![_plus](docs/fonts/example1/_plus.png)
+![_minus](docs/fonts/example1/_minus.png)
+![_mult](docs/fonts/example1/_mult.png)
+![_div](docs/fonts/example1/_div.png)
+![_equal](docs/fonts/example1/_equal.png)
+
+
 ### Example 2
+
+#### Letters
 
 ![a](docs/fonts/example2/a.png)
 ![b](docs/fonts/example2/b.png)
@@ -60,7 +92,37 @@
 ![y](docs/fonts/example2/y.png)
 ![z](docs/fonts/example2/z.png)
 
+#### Digits
+
+![0](docs/fonts/example2/0.png)
+![1](docs/fonts/example2/1.png)
+![2](docs/fonts/example2/2.png)
+![3](docs/fonts/example2/3.png)
+![4](docs/fonts/example2/4.png)
+![5](docs/fonts/example2/5.png)
+![6](docs/fonts/example2/6.png)
+![7](docs/fonts/example2/7.png)
+![8](docs/fonts/example2/8.png)
+![9](docs/fonts/example2/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example2/_point.png)
+![_comma](docs/fonts/example2/_comma.png)
+![_colon](docs/fonts/example2/_colon.png)
+![_semicolon](docs/fonts/example2/_semicolon.png)
+![_exclamation](docs/fonts/example2/_exclamation.png)
+![_question](docs/fonts/example2/_question.png)
+![_plus](docs/fonts/example2/_plus.png)
+![_minus](docs/fonts/example2/_minus.png)
+![_mult](docs/fonts/example2/_mult.png)
+![_div](docs/fonts/example2/_div.png)
+![_equal](docs/fonts/example2/_equal.png)
+
+
 ### Example 3
+
+#### Letters
 
 ![a](docs/fonts/example3/a.png)
 ![b](docs/fonts/example3/b.png)
@@ -89,7 +151,37 @@
 ![y](docs/fonts/example3/y.png)
 ![z](docs/fonts/example3/z.png)
 
+#### Digits
+
+![0](docs/fonts/example3/0.png)
+![1](docs/fonts/example3/1.png)
+![2](docs/fonts/example3/2.png)
+![3](docs/fonts/example3/3.png)
+![4](docs/fonts/example3/4.png)
+![5](docs/fonts/example3/5.png)
+![6](docs/fonts/example3/6.png)
+![7](docs/fonts/example3/7.png)
+![8](docs/fonts/example3/8.png)
+![9](docs/fonts/example3/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example3/_point.png)
+![_comma](docs/fonts/example3/_comma.png)
+![_colon](docs/fonts/example3/_colon.png)
+![_semicolon](docs/fonts/example3/_semicolon.png)
+![_exclamation](docs/fonts/example3/_exclamation.png)
+![_question](docs/fonts/example3/_question.png)
+![_plus](docs/fonts/example3/_plus.png)
+![_minus](docs/fonts/example3/_minus.png)
+![_mult](docs/fonts/example3/_mult.png)
+![_div](docs/fonts/example3/_div.png)
+![_equal](docs/fonts/example3/_equal.png)
+
+
 ### Example 4
+
+#### Letters
 
 ![a](docs/fonts/example4/a.png)
 ![b](docs/fonts/example4/b.png)
@@ -118,7 +210,37 @@
 ![y](docs/fonts/example4/y.png)
 ![z](docs/fonts/example4/z.png)
 
+#### Digits
+
+![0](docs/fonts/example4/0.png)
+![1](docs/fonts/example4/1.png)
+![2](docs/fonts/example4/2.png)
+![3](docs/fonts/example4/3.png)
+![4](docs/fonts/example4/4.png)
+![5](docs/fonts/example4/5.png)
+![6](docs/fonts/example4/6.png)
+![7](docs/fonts/example4/7.png)
+![8](docs/fonts/example4/8.png)
+![9](docs/fonts/example4/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example4/_point.png)
+![_comma](docs/fonts/example4/_comma.png)
+![_colon](docs/fonts/example4/_colon.png)
+![_semicolon](docs/fonts/example4/_semicolon.png)
+![_exclamation](docs/fonts/example4/_exclamation.png)
+![_question](docs/fonts/example4/_question.png)
+![_plus](docs/fonts/example4/_plus.png)
+![_minus](docs/fonts/example4/_minus.png)
+![_mult](docs/fonts/example4/_mult.png)
+![_div](docs/fonts/example4/_div.png)
+![_equal](docs/fonts/example4/_equal.png)
+
+
 ### Example 5
+
+#### Letters
 
 ![a](docs/fonts/example5/a.png)
 ![b](docs/fonts/example5/b.png)
@@ -147,7 +269,37 @@
 ![y](docs/fonts/example5/y.png)
 ![z](docs/fonts/example5/z.png)
 
+#### Digits
+
+![0](docs/fonts/example5/0.png)
+![1](docs/fonts/example5/1.png)
+![2](docs/fonts/example5/2.png)
+![3](docs/fonts/example5/3.png)
+![4](docs/fonts/example5/4.png)
+![5](docs/fonts/example5/5.png)
+![6](docs/fonts/example5/6.png)
+![7](docs/fonts/example5/7.png)
+![8](docs/fonts/example5/8.png)
+![9](docs/fonts/example5/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example5/_point.png)
+![_comma](docs/fonts/example5/_comma.png)
+![_colon](docs/fonts/example5/_colon.png)
+![_semicolon](docs/fonts/example5/_semicolon.png)
+![_exclamation](docs/fonts/example5/_exclamation.png)
+![_question](docs/fonts/example5/_question.png)
+![_plus](docs/fonts/example5/_plus.png)
+![_minus](docs/fonts/example5/_minus.png)
+![_mult](docs/fonts/example5/_mult.png)
+![_div](docs/fonts/example5/_div.png)
+![_equal](docs/fonts/example5/_equal.png)
+
+
 ### Example 6
+
+#### Letters
 
 ![a](docs/fonts/example6/a.png)
 ![b](docs/fonts/example6/b.png)
@@ -176,7 +328,37 @@
 ![y](docs/fonts/example6/y.png)
 ![z](docs/fonts/example6/z.png)
 
+
+#### Digits
+
+![0](docs/fonts/example6/0.png)
+![1](docs/fonts/example6/1.png)
+![2](docs/fonts/example6/2.png)
+![3](docs/fonts/example6/3.png)
+![4](docs/fonts/example6/4.png)
+![5](docs/fonts/example6/5.png)
+![6](docs/fonts/example6/6.png)
+![7](docs/fonts/example6/7.png)
+![8](docs/fonts/example6/8.png)
+![9](docs/fonts/example6/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example6/_point.png)
+![_comma](docs/fonts/example6/_comma.png)
+![_colon](docs/fonts/example6/_colon.png)
+![_semicolon](docs/fonts/example6/_semicolon.png)
+![_exclamation](docs/fonts/example6/_exclamation.png)
+![_question](docs/fonts/example6/_question.png)
+![_plus](docs/fonts/example6/_plus.png)
+![_minus](docs/fonts/example6/_minus.png)
+![_mult](docs/fonts/example6/_mult.png)
+![_div](docs/fonts/example6/_div.png)
+![_equal](docs/fonts/example6/_equal.png)
+
 ### Example 7
+
+#### Letters
 
 ![a](docs/fonts/example7/a.png)
 ![b](docs/fonts/example7/b.png)
@@ -205,7 +387,37 @@
 ![y](docs/fonts/example7/y.png)
 ![z](docs/fonts/example7/z.png)
 
+
+#### Digits
+
+![0](docs/fonts/example7/0.png)
+![1](docs/fonts/example7/1.png)
+![2](docs/fonts/example7/2.png)
+![3](docs/fonts/example7/3.png)
+![4](docs/fonts/example7/4.png)
+![5](docs/fonts/example7/5.png)
+![6](docs/fonts/example7/6.png)
+![7](docs/fonts/example7/7.png)
+![8](docs/fonts/example7/8.png)
+![9](docs/fonts/example7/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example7/_point.png)
+![_comma](docs/fonts/example7/_comma.png)
+![_colon](docs/fonts/example7/_colon.png)
+![_semicolon](docs/fonts/example7/_semicolon.png)
+![_exclamation](docs/fonts/example7/_exclamation.png)
+![_question](docs/fonts/example7/_question.png)
+![_plus](docs/fonts/example7/_plus.png)
+![_minus](docs/fonts/example7/_minus.png)
+![_mult](docs/fonts/example7/_mult.png)
+![_div](docs/fonts/example7/_div.png)
+![_equal](docs/fonts/example7/_equal.png)
+
 ### Example 8
+
+#### Letters
 
 ![a](docs/fonts/example8/a.png)
 ![b](docs/fonts/example8/b.png)
@@ -234,7 +446,37 @@
 ![y](docs/fonts/example8/y.png)
 ![z](docs/fonts/example8/z.png)
 
+
+#### Digits
+
+![0](docs/fonts/example8/0.png)
+![1](docs/fonts/example8/1.png)
+![2](docs/fonts/example8/2.png)
+![3](docs/fonts/example8/3.png)
+![4](docs/fonts/example8/4.png)
+![5](docs/fonts/example8/5.png)
+![6](docs/fonts/example8/6.png)
+![7](docs/fonts/example8/7.png)
+![8](docs/fonts/example8/8.png)
+![9](docs/fonts/example8/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example8/_point.png)
+![_comma](docs/fonts/example8/_comma.png)
+![_colon](docs/fonts/example8/_colon.png)
+![_semicolon](docs/fonts/example8/_semicolon.png)
+![_exclamation](docs/fonts/example8/_exclamation.png)
+![_question](docs/fonts/example8/_question.png)
+![_plus](docs/fonts/example8/_plus.png)
+![_minus](docs/fonts/example8/_minus.png)
+![_mult](docs/fonts/example8/_mult.png)
+![_div](docs/fonts/example8/_div.png)
+![_equal](docs/fonts/example8/_equal.png)
+
 ### Example 9
+
+#### Letters
 
 ![a](docs/fonts/example9/a.png)
 ![b](docs/fonts/example9/b.png)
@@ -262,4 +504,32 @@
 ![x](docs/fonts/example9/x.png)
 ![y](docs/fonts/example9/y.png)
 ![z](docs/fonts/example9/z.png)
+
+
+#### Digits
+
+![0](docs/fonts/example9/0.png)
+![1](docs/fonts/example9/1.png)
+![2](docs/fonts/example9/2.png)
+![3](docs/fonts/example9/3.png)
+![4](docs/fonts/example9/4.png)
+![5](docs/fonts/example9/5.png)
+![6](docs/fonts/example9/6.png)
+![7](docs/fonts/example9/7.png)
+![8](docs/fonts/example9/8.png)
+![9](docs/fonts/example9/9.png)
+
+#### Punctuation
+
+![_point](docs/fonts/example9/_point.png)
+![_comma](docs/fonts/example9/_comma.png)
+![_colon](docs/fonts/example9/_colon.png)
+![_semicolon](docs/fonts/example9/_semicolon.png)
+![_exclamation](docs/fonts/example9/_exclamation.png)
+![_question](docs/fonts/example9/_question.png)
+![_plus](docs/fonts/example9/_plus.png)
+![_minus](docs/fonts/example9/_minus.png)
+![_mult](docs/fonts/example9/_mult.png)
+![_div](docs/fonts/example9/_div.png)
+![_equal](docs/fonts/example9/_equal.png)
 

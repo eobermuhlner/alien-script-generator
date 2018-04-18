@@ -30,9 +30,9 @@ class GlyphGenerator(
         private val curveRangeX: IntRange = randomInt(random, -width, 0) .. randomInt(random, 0, width),
         private val curveRangeY: IntRange = randomInt(random, -height, 0) .. randomInt(random, 0, height),
 
-        private val strokeCountRange: IntRange = randomInt(random, 1..2) .. randomInt(random, 2..10),
-        private val primaryPointCountRange: IntRange = randomInt(random, 3..4) .. randomInt(random, 4..6),
-        private val secondaryPointCountRange: IntRange = randomInt(random, 1..2) .. randomInt(random, 2..4)) {
+        private val strokeCountRange: IntRange = randomPick(random, 1, 2) .. randomPick(random, 2, 2, 2, 2, 3, 3, 3, 4),
+        private val primaryPointCountRange: IntRange = randomPick(random, 3, 4) .. randomPick(random, 4, 4, 4, 5, 5, 6),
+        private val secondaryPointCountRange: IntRange = randomPick(random, 1, 2, 2, 2) .. randomPick(random, 2, 3, 3, 4)) {
 
 
     private val gridProbabilities = DoubleArray(width * height)
@@ -138,9 +138,9 @@ class GlyphGenerator(
                 curveRangeX=curveRangeX,
                 curveRangeY=curveRangeY,
 
-                strokeCountRange=randomInt(random, 1..2) .. randomInt(random, 2..3),
-                primaryPointCountRange=randomInt(random, 2..3) .. randomInt(random, 3..4),
-                secondaryPointCountRange=randomInt(random, 1..2) .. randomInt(random, 2..4))
+                strokeCountRange=randomPick(random, 1, 2, 2) .. randomPick(random, 2, 2, 3, 3, 4),
+                primaryPointCountRange=randomPick(random, 2, 3) .. randomPick(random, 2, 3, 3, 4),
+                secondaryPointCountRange=randomPick(random, 1, 2) .. randomPick(random, 2, 2, 3, 4))
     }
 
     fun create(): Glyph {
