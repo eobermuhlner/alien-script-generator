@@ -520,7 +520,7 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 
 ### Example 9
 
-Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example1/example9.html).
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example9/example.html).
 
 #### Letters
 
