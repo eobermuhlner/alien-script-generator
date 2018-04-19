@@ -206,6 +206,34 @@ class GlyphGenerator(
         return Glyph(width, height, listOf())
     }
 
+    fun createBrackets(): List<Glyph> {
+        val openGlyph = create()
+        val closeGlyph = createMirror(openGlyph)
+        return listOf(openGlyph, closeGlyph)
+    }
+
+    private fun createMirror(sourceGlyph: Glyph): Glyph {
+        val strokes = mutableListOf<Stroke>()
+        for (sourceStroke in sourceGlyph.strokes) {
+            val points = mutableListOf<Point>()
+
+            for (sourcePoint in sourceStroke.points) {
+                val point = Point(
+                        x = width - sourcePoint.x,
+                        y = sourcePoint.y,
+                        bezierStartX = width - sourcePoint.bezierStartX,
+                        bezierStartY = sourcePoint.bezierStartY,
+                        bezierEndX = width - sourcePoint.bezierEndX,
+                        bezierEndY = sourcePoint.bezierEndY)
+                points.add(point)
+            }
+
+            strokes.add(Stroke(points))
+        }
+
+        return Glyph(sourceGlyph.width, sourceGlyph.height, strokes)
+    }
+
     private fun nextBaselineStartPoint(deltaX: Int = 0, deltaY: Int = 0): Point {
         val x = 0 + deltaX
         val y = baselineY + deltaY
@@ -291,6 +319,11 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
         for(key in listOf("_plus", "_minus", "_mult", "_div", "_equal")) {
             glyphsMap[key] = createGlyph(operatorGlyphGenerator)
         }
+        for(key in listOf("_square_bracket", "_round_bracket", "_curly_bracket")) {
+            val bracketGlyphs = createBracketGlyphs(operatorGlyphGenerator)
+            glyphsMap["_open$key"] = bracketGlyphs[0]
+            glyphsMap["_close$key"] = bracketGlyphs[1]
+        }
 
         glyphsMap["_space"] = glyphGenerator.createSpace()
 
@@ -311,6 +344,33 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
             }
         }
         throw IllegalArgumentException("Failed to generate distinct glyph.\n$knownGlyphs" )
+    }
+
+    private fun createBracketGlyphs(glyphGenerator: GlyphGenerator): List<Glyph> {
+        for (i in 0..1000) {
+            val bracketGlyphs = glyphGenerator.createBrackets()
+
+            val bracketImages = mutableListOf<String>()
+            for (bracketGlyph in bracketGlyphs) {
+                if (!knownGlyphs.contains(bracketGlyph)) {
+                    val image = convertImageToString(glyphToImageConverter.convert(bracketGlyph))
+
+                    if (!knownImages.contains(image) && !bracketImages.contains(image)) {
+                        bracketImages.add(image)
+                    }
+                }
+            }
+            if (bracketImages.size == bracketGlyphs.size) {
+                knownGlyphs.addAll(bracketGlyphs)
+                knownImages.addAll(bracketImages)
+                return bracketGlyphs
+            }
+        }
+        throw IllegalArgumentException("Failed to generate distinct bracket glyphs.\n$knownGlyphs" )
+    }
+
+    private fun checkGlyph(glyph: Glyph) {
+
     }
 
     private fun convertImageToString(image: BufferedImage): String {
@@ -485,7 +545,10 @@ fun createExampleFonts(seed: Long = 0) {
         println("Generating font #$f")
         createExampleFont("docs/fonts/example$f", GlyphGenerator(Random(f.toLong() + seed)))
     }
+}
 
+
+fun createExampleReferenceFonts(seed: Long = 0) {
     createExampleFont("docs/fonts/exampleLatin", GlyphGenerator(Random(seed),
             width=5,
             height=4,
@@ -498,7 +561,7 @@ fun createExampleFonts(seed: Long = 0) {
             hasEndBaseline=false,
             baselineY=0,
 
-            curveProbability=0.2,
+            curveProbability=0.3,
             curveUseGridProbability=0.9,
             curveRangeX=-5 .. 5,
             curveRangeY=-4 .. 4,
@@ -547,5 +610,6 @@ fun createLargeGlyph(seed: Long = 0) {
 
 fun main(args: Array<String>) {
     createExampleFonts()
+    createExampleReferenceFonts()
     //createLargeGlyph(0)
 }

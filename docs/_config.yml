@@ -13,3 +13,9 @@ include:
   - _question.png
   - _semicolon.png
   - _space.png
+  - _open_square_bracket.png
+  - _close_square_bracket.png
+  - _open_round_bracket.png
+  - _close_round_bracket.png
+  - _open_curly_bracket.png
+  - _close_curly_bracket.png

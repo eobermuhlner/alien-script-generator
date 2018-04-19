@@ -90,6 +90,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example1/_mult.png "mult")
 ![div](docs/fonts/example1/_div.png "div")
 ![equal](docs/fonts/example1/_equal.png "equal")
+![open_square_bracket](docs/fonts/example1/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example1/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example1/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example1/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example1/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example1/_close_curly_bracket.png "close_curly_bracket")
 
 
 ### Example 2
@@ -151,6 +157,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example2/_mult.png "mult")
 ![div](docs/fonts/example2/_div.png "div")
 ![equal](docs/fonts/example2/_equal.png "equal")
+![open_square_bracket](docs/fonts/example2/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example2/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example2/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example2/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example2/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example2/_close_curly_bracket.png "close_curly_bracket")
 
 
 ### Example 3
@@ -212,6 +224,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example3/_mult.png "mult")
 ![div](docs/fonts/example3/_div.png "div")
 ![equal](docs/fonts/example3/_equal.png "equal")
+![open_square_bracket](docs/fonts/example3/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example3/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example3/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example3/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example3/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example3/_close_curly_bracket.png "close_curly_bracket")
 
 
 ### Example 4
@@ -273,6 +291,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example4/_mult.png "mult")
 ![div](docs/fonts/example4/_div.png "div")
 ![equal](docs/fonts/example4/_equal.png "equal")
+![open_square_bracket](docs/fonts/example4/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example4/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example4/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example4/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example4/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example4/_close_curly_bracket.png "close_curly_bracket")
 
 
 ### Example 5
@@ -334,6 +358,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example5/_mult.png "mult")
 ![div](docs/fonts/example5/_div.png "div")
 ![equal](docs/fonts/example5/_equal.png "equal")
+![open_square_bracket](docs/fonts/example5/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example5/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example5/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example5/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example5/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example5/_close_curly_bracket.png "close_curly_bracket")
 
 
 ### Example 6
@@ -396,6 +426,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example6/_mult.png "mult")
 ![div](docs/fonts/example6/_div.png "div")
 ![equal](docs/fonts/example6/_equal.png "equal")
+![open_square_bracket](docs/fonts/example6/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example6/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example6/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example6/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example6/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example6/_close_curly_bracket.png "close_curly_bracket")
 
 ### Example 7
 
@@ -457,6 +493,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example7/_mult.png "mult")
 ![div](docs/fonts/example7/_div.png "div")
 ![equal](docs/fonts/example7/_equal.png "equal")
+![open_square_bracket](docs/fonts/example7/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example7/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example7/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example7/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example7/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example7/_close_curly_bracket.png "close_curly_bracket")
 
 ### Example 8
 
@@ -518,6 +560,12 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example8/_mult.png "mult")
 ![div](docs/fonts/example8/_div.png "div")
 ![equal](docs/fonts/example8/_equal.png "equal")
+![open_square_bracket](docs/fonts/example8/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example8/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example8/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example8/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example8/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example8/_close_curly_bracket.png "close_curly_bracket")
 
 ### Example 9
 
@@ -579,4 +627,10 @@ Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/font
 ![mult](docs/fonts/example9/_mult.png "mult")
 ![div](docs/fonts/example9/_div.png "div")
 ![equal](docs/fonts/example9/_equal.png "equal")
+![open_square_bracket](docs/fonts/example9/_open_square_bracket.png "open_square_bracket")
+![close_square_bracket](docs/fonts/example9/_close_square_bracket.png "close_square_bracket")
+![open_round_bracket](docs/fonts/example9/_open_round_bracket.png "open_round_bracket")
+![close_round_bracket](docs/fonts/example9/_close_round_bracket.png "close_round_bracket")
+![open_curly_bracket](docs/fonts/example9/_open_curly_bracket.png "open_curly_bracket")
+![close_curly_bracket](docs/fonts/example9/_close_curly_bracket.png "close_curly_bracket")
 
