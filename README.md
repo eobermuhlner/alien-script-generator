@@ -1,8 +1,23 @@
 # Procedurally generated fonts for alien languages
 
+This project is a proof of concept to generate "fonts" for alien languages (e.g. for a sci-fi game).
+
+Each font consists of the glyph images for 26 letters, 10 digits and a few punctuation characters.
+
+Obviously alien languages would probably not follow these rules, this is an arbitrary decision to make them easy to compare visually.
+The algorithm could easily create hundreds of letters. Together with a (probably n-gram based) procedural sequence of these letters very different looking alien languages could be generated.
+
+The following examples are automatically generated with the first 9 random seeds.
+
+Each example has fairly consistent rules used to generate the glyphs for this language.
+The rules for digits vary slightly from the rules for letters.
+Punctuation glyphs are much simpler than normal letters but still follow similar construction rules.
+
 ## Examples
 
 ### Example 1
+
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example1/example.html).
 
 #### Letters
 
@@ -63,6 +78,8 @@
 
 ### Example 2
 
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example2/example.html).
+
 #### Letters
 
 ![a](docs/fonts/example2/a.png)
@@ -121,6 +138,8 @@
 
 
 ### Example 3
+
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example3/example.html).
 
 #### Letters
 
@@ -181,6 +200,8 @@
 
 ### Example 4
 
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example4/example.html).
+
 #### Letters
 
 ![a](docs/fonts/example4/a.png)
@@ -239,6 +260,8 @@
 
 
 ### Example 5
+
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example5/example.html).
 
 #### Letters
 
@@ -299,6 +322,8 @@
 
 ### Example 6
 
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example6/example.html).
+
 #### Letters
 
 ![a](docs/fonts/example6/a.png)
@@ -357,6 +382,8 @@
 ![equal](docs/fonts/example6/_equal.png)
 
 ### Example 7
+
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example7/example.html).
 
 #### Letters
 
@@ -417,6 +444,8 @@
 
 ### Example 8
 
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example8/example.html).
+
 #### Letters
 
 ![a](docs/fonts/example8/a.png)
@@ -475,6 +504,8 @@
 ![equal](docs/fonts/example8/_equal.png)
 
 ### Example 9
+
+Link to [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example1/example9.html).
 
 #### Letters
 
