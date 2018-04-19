@@ -48,17 +48,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example1/_point.png)
-![_comma](docs/fonts/example1/_comma.png)
-![_colon](docs/fonts/example1/_colon.png)
-![_semicolon](docs/fonts/example1/_semicolon.png)
-![_exclamation](docs/fonts/example1/_exclamation.png)
-![_question](docs/fonts/example1/_question.png)
-![_plus](docs/fonts/example1/_plus.png)
-![_minus](docs/fonts/example1/_minus.png)
-![_mult](docs/fonts/example1/_mult.png)
-![_div](docs/fonts/example1/_div.png)
-![_equal](docs/fonts/example1/_equal.png)
+![point](docs/fonts/example1/_point.png)
+![comma](docs/fonts/example1/_comma.png)
+![colon](docs/fonts/example1/_colon.png)
+![semicolon](docs/fonts/example1/_semicolon.png)
+![exclamation](docs/fonts/example1/_exclamation.png)
+![question](docs/fonts/example1/_question.png)
+![plus](docs/fonts/example1/_plus.png)
+![minus](docs/fonts/example1/_minus.png)
+![mult](docs/fonts/example1/_mult.png)
+![div](docs/fonts/example1/_div.png)
+![equal](docs/fonts/example1/_equal.png)
 
 
 ### Example 2
@@ -107,17 +107,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example2/_point.png)
-![_comma](docs/fonts/example2/_comma.png)
-![_colon](docs/fonts/example2/_colon.png)
-![_semicolon](docs/fonts/example2/_semicolon.png)
-![_exclamation](docs/fonts/example2/_exclamation.png)
-![_question](docs/fonts/example2/_question.png)
-![_plus](docs/fonts/example2/_plus.png)
-![_minus](docs/fonts/example2/_minus.png)
-![_mult](docs/fonts/example2/_mult.png)
-![_div](docs/fonts/example2/_div.png)
-![_equal](docs/fonts/example2/_equal.png)
+![point](docs/fonts/example2/_point.png)
+![comma](docs/fonts/example2/_comma.png)
+![colon](docs/fonts/example2/_colon.png)
+![semicolon](docs/fonts/example2/_semicolon.png)
+![exclamation](docs/fonts/example2/_exclamation.png)
+![question](docs/fonts/example2/_question.png)
+![plus](docs/fonts/example2/_plus.png)
+![minus](docs/fonts/example2/_minus.png)
+![mult](docs/fonts/example2/_mult.png)
+![div](docs/fonts/example2/_div.png)
+![equal](docs/fonts/example2/_equal.png)
 
 
 ### Example 3
@@ -166,17 +166,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example3/_point.png)
-![_comma](docs/fonts/example3/_comma.png)
-![_colon](docs/fonts/example3/_colon.png)
-![_semicolon](docs/fonts/example3/_semicolon.png)
-![_exclamation](docs/fonts/example3/_exclamation.png)
-![_question](docs/fonts/example3/_question.png)
-![_plus](docs/fonts/example3/_plus.png)
-![_minus](docs/fonts/example3/_minus.png)
-![_mult](docs/fonts/example3/_mult.png)
-![_div](docs/fonts/example3/_div.png)
-![_equal](docs/fonts/example3/_equal.png)
+![point](docs/fonts/example3/_point.png)
+![comma](docs/fonts/example3/_comma.png)
+![colon](docs/fonts/example3/_colon.png)
+![semicolon](docs/fonts/example3/_semicolon.png)
+![exclamation](docs/fonts/example3/_exclamation.png)
+![question](docs/fonts/example3/_question.png)
+![plus](docs/fonts/example3/_plus.png)
+![minus](docs/fonts/example3/_minus.png)
+![mult](docs/fonts/example3/_mult.png)
+![div](docs/fonts/example3/_div.png)
+![equal](docs/fonts/example3/_equal.png)
 
 
 ### Example 4
@@ -225,17 +225,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example4/_point.png)
-![_comma](docs/fonts/example4/_comma.png)
-![_colon](docs/fonts/example4/_colon.png)
-![_semicolon](docs/fonts/example4/_semicolon.png)
-![_exclamation](docs/fonts/example4/_exclamation.png)
-![_question](docs/fonts/example4/_question.png)
-![_plus](docs/fonts/example4/_plus.png)
-![_minus](docs/fonts/example4/_minus.png)
-![_mult](docs/fonts/example4/_mult.png)
-![_div](docs/fonts/example4/_div.png)
-![_equal](docs/fonts/example4/_equal.png)
+![point](docs/fonts/example4/_point.png)
+![comma](docs/fonts/example4/_comma.png)
+![colon](docs/fonts/example4/_colon.png)
+![semicolon](docs/fonts/example4/_semicolon.png)
+![exclamation](docs/fonts/example4/_exclamation.png)
+![question](docs/fonts/example4/_question.png)
+![plus](docs/fonts/example4/_plus.png)
+![minus](docs/fonts/example4/_minus.png)
+![mult](docs/fonts/example4/_mult.png)
+![div](docs/fonts/example4/_div.png)
+![equal](docs/fonts/example4/_equal.png)
 
 
 ### Example 5
@@ -284,17 +284,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example5/_point.png)
-![_comma](docs/fonts/example5/_comma.png)
-![_colon](docs/fonts/example5/_colon.png)
-![_semicolon](docs/fonts/example5/_semicolon.png)
-![_exclamation](docs/fonts/example5/_exclamation.png)
-![_question](docs/fonts/example5/_question.png)
-![_plus](docs/fonts/example5/_plus.png)
-![_minus](docs/fonts/example5/_minus.png)
-![_mult](docs/fonts/example5/_mult.png)
-![_div](docs/fonts/example5/_div.png)
-![_equal](docs/fonts/example5/_equal.png)
+![point](docs/fonts/example5/_point.png)
+![comma](docs/fonts/example5/_comma.png)
+![colon](docs/fonts/example5/_colon.png)
+![semicolon](docs/fonts/example5/_semicolon.png)
+![exclamation](docs/fonts/example5/_exclamation.png)
+![question](docs/fonts/example5/_question.png)
+![plus](docs/fonts/example5/_plus.png)
+![minus](docs/fonts/example5/_minus.png)
+![mult](docs/fonts/example5/_mult.png)
+![div](docs/fonts/example5/_div.png)
+![equal](docs/fonts/example5/_equal.png)
 
 
 ### Example 6
@@ -344,17 +344,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example6/_point.png)
-![_comma](docs/fonts/example6/_comma.png)
-![_colon](docs/fonts/example6/_colon.png)
-![_semicolon](docs/fonts/example6/_semicolon.png)
-![_exclamation](docs/fonts/example6/_exclamation.png)
-![_question](docs/fonts/example6/_question.png)
-![_plus](docs/fonts/example6/_plus.png)
-![_minus](docs/fonts/example6/_minus.png)
-![_mult](docs/fonts/example6/_mult.png)
-![_div](docs/fonts/example6/_div.png)
-![_equal](docs/fonts/example6/_equal.png)
+![point](docs/fonts/example6/_point.png)
+![comma](docs/fonts/example6/_comma.png)
+![colon](docs/fonts/example6/_colon.png)
+![semicolon](docs/fonts/example6/_semicolon.png)
+![exclamation](docs/fonts/example6/_exclamation.png)
+![question](docs/fonts/example6/_question.png)
+![plus](docs/fonts/example6/_plus.png)
+![minus](docs/fonts/example6/_minus.png)
+![mult](docs/fonts/example6/_mult.png)
+![div](docs/fonts/example6/_div.png)
+![equal](docs/fonts/example6/_equal.png)
 
 ### Example 7
 
@@ -403,17 +403,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example7/_point.png)
-![_comma](docs/fonts/example7/_comma.png)
-![_colon](docs/fonts/example7/_colon.png)
-![_semicolon](docs/fonts/example7/_semicolon.png)
-![_exclamation](docs/fonts/example7/_exclamation.png)
-![_question](docs/fonts/example7/_question.png)
-![_plus](docs/fonts/example7/_plus.png)
-![_minus](docs/fonts/example7/_minus.png)
-![_mult](docs/fonts/example7/_mult.png)
-![_div](docs/fonts/example7/_div.png)
-![_equal](docs/fonts/example7/_equal.png)
+![point](docs/fonts/example7/_point.png)
+![comma](docs/fonts/example7/_comma.png)
+![colon](docs/fonts/example7/_colon.png)
+![semicolon](docs/fonts/example7/_semicolon.png)
+![exclamation](docs/fonts/example7/_exclamation.png)
+![question](docs/fonts/example7/_question.png)
+![plus](docs/fonts/example7/_plus.png)
+![minus](docs/fonts/example7/_minus.png)
+![mult](docs/fonts/example7/_mult.png)
+![div](docs/fonts/example7/_div.png)
+![equal](docs/fonts/example7/_equal.png)
 
 ### Example 8
 
@@ -462,17 +462,17 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example8/_point.png)
-![_comma](docs/fonts/example8/_comma.png)
-![_colon](docs/fonts/example8/_colon.png)
-![_semicolon](docs/fonts/example8/_semicolon.png)
-![_exclamation](docs/fonts/example8/_exclamation.png)
-![_question](docs/fonts/example8/_question.png)
-![_plus](docs/fonts/example8/_plus.png)
-![_minus](docs/fonts/example8/_minus.png)
-![_mult](docs/fonts/example8/_mult.png)
-![_div](docs/fonts/example8/_div.png)
-![_equal](docs/fonts/example8/_equal.png)
+![point](docs/fonts/example8/_point.png)
+![comma](docs/fonts/example8/_comma.png)
+![colon](docs/fonts/example8/_colon.png)
+![semicolon](docs/fonts/example8/_semicolon.png)
+![exclamation](docs/fonts/example8/_exclamation.png)
+![question](docs/fonts/example8/_question.png)
+![plus](docs/fonts/example8/_plus.png)
+![minus](docs/fonts/example8/_minus.png)
+![mult](docs/fonts/example8/_mult.png)
+![div](docs/fonts/example8/_div.png)
+![equal](docs/fonts/example8/_equal.png)
 
 ### Example 9
 
@@ -521,15 +521,15 @@
 
 #### Punctuation
 
-![_point](docs/fonts/example9/_point.png)
-![_comma](docs/fonts/example9/_comma.png)
-![_colon](docs/fonts/example9/_colon.png)
-![_semicolon](docs/fonts/example9/_semicolon.png)
-![_exclamation](docs/fonts/example9/_exclamation.png)
-![_question](docs/fonts/example9/_question.png)
-![_plus](docs/fonts/example9/_plus.png)
-![_minus](docs/fonts/example9/_minus.png)
-![_mult](docs/fonts/example9/_mult.png)
-![_div](docs/fonts/example9/_div.png)
-![_equal](docs/fonts/example9/_equal.png)
+![point](docs/fonts/example9/_point.png)
+![comma](docs/fonts/example9/_comma.png)
+![colon](docs/fonts/example9/_colon.png)
+![semicolon](docs/fonts/example9/_semicolon.png)
+![exclamation](docs/fonts/example9/_exclamation.png)
+![question](docs/fonts/example9/_question.png)
+![plus](docs/fonts/example9/_plus.png)
+![minus](docs/fonts/example9/_minus.png)
+![mult](docs/fonts/example9/_mult.png)
+![div](docs/fonts/example9/_div.png)
+![equal](docs/fonts/example9/_equal.png)
 
