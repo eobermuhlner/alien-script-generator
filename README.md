@@ -20,6 +20,7 @@ The glyphs are guaranteed to be distinct from all the other glyphs in the same f
 * variable width glyph (proportional instead of monospaced fonts)
 * add rule for closed loops
 * add rule to avoid crossing lines
+* add rule to prefer going forward
 * optionally create upper/lower case variants of letters
 * create bracket glyphs (optionally symmetrical, special baseline handling)
 * diacritic glyphs
