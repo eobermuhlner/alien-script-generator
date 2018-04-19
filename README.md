@@ -13,7 +13,7 @@ Each example has fairly consistent rules used to generate the glyphs for this la
 The rules for digits vary slightly from the rules for letters.
 Punctuation glyphs are much simpler than normal letters but still follow similar construction rules.
 
-The glyphs are guaranteed to be distinct from all the other glyphs in the same font by pre-rendering and comparing pixel-wise during construction of the font. Unfortunately this can still produce visually very similar glyphs to us humans, but rest assured - the aliens have much more accurate visual perception.
+Each glyph is guaranteed to be distinct from all the other glyphs in the same font by pre-rendering and comparing pixel-wise during construction of the font. Unfortunately this can still produce visually very similar glyphs to us humans, but rest assured - the aliens have much more accurate visual perception and laugh at our problems to distinguish them.
 
 ## Enhancement Ideas
 
