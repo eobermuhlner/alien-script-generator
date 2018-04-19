@@ -1,3 +1,15 @@
 theme: jekyll-theme-cayman
 
-include: _colon.png, _comma.png, _div.png, _equal.png, _exclamation.png, _minus.png, _mult.png, _plus.png, _point.png, _question.png, _semicolon.png, _space.png
+include:
+  - _colon.png
+  - _comma.png
+  - _div.png
+  - _equal.png
+  - _exclamation.png
+  - _minus.png
+  - _mult.png
+  - _plus.png
+  - _point.png
+  - _question.png
+  - _semicolon.png
+  - _space.png
