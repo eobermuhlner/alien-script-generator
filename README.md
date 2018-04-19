@@ -15,6 +15,16 @@ Punctuation glyphs are much simpler than normal letters but still follow similar
 
 The glyphs are guaranteed to be distinct from all the other glyphs in the same font by pre-rendering and comparing pixel-wise during construction of the font. Unfortunately this can still produce visually very similar glyphs to us humans, but rest assured - the aliens have much more accurate visual perception.
 
+## Enhancement Ideas
+
+* variable width glyph (proportional instead of monospaced fonts)
+* add rule for closed loops
+* add rule to avoid crossing lines
+* diacritic glyphs
+* support subsets (e.g. vowels) to follow separate rules (e.g. to be diacritics)
+* create TTF font
+* generate example fonts for "reference" rulesets (e.g. latin-looking glyphs) to verify quality of rules
+
 ## Examples
 
 ### Example 1
