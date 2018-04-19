@@ -110,7 +110,7 @@ class GlyphGenerator(
                 baselineY=baselineY,
 
                 curveProbability=randomDelta(random, curveProbability, -0.3, 0.3, 0.0, 1.0),
-                curveUseGridProbability=curveUseGridProbability,
+                curveUseGridProbability=random.nextDouble(),
                 curveRangeX=curveRangeX,
                 curveRangeY=curveRangeY,
 
@@ -138,9 +138,33 @@ class GlyphGenerator(
                 curveRangeX=curveRangeX,
                 curveRangeY=curveRangeY,
 
-                strokeCountRange=randomPick(random, 1, 2, 2) .. randomPick(random, 2, 2, 3, 3, 4),
-                primaryPointCountRange=randomPick(random, 2, 3) .. randomPick(random, 2, 3, 3, 4),
-                secondaryPointCountRange=randomPick(random, 1, 2) .. randomPick(random, 2, 2, 3, 4))
+                strokeCountRange=randomPick(random, 1, 1, 1, 2) .. randomPick(random, 1, 2, 2, 2),
+                primaryPointCountRange=2 .. randomPick(random, 2, 2, 2, 3),
+                secondaryPointCountRange=randomPick(random, 1, 2, 2) .. 2)
+    }
+
+    fun operatorGlyphGenerator(): GlyphGenerator {
+        return GlyphGenerator(
+                random,
+                width=width,
+                height=height,
+                gridBorderProbabilityRange=gridBorderProbabilityRange,
+                gridXProbabilityRange=gridXProbabilityRange,
+                gridYProbabilityRange=gridYProbabilityRange,
+                gridCellProbabilityRange=gridCellProbabilityRange,
+
+                hasStartBaseline=false,
+                hasEndBaseline=false,
+                baselineY=baselineY,
+
+                curveProbability=curveProbability,
+                curveUseGridProbability=curveUseGridProbability,
+                curveRangeX=curveRangeX,
+                curveRangeY=curveRangeY,
+
+                strokeCountRange=randomPick(random, 1, 2) .. randomPick(random, 1, 2, 2, 3),
+                primaryPointCountRange=randomPick(random, 2, 3) .. randomPick(random, 2, 3),
+                secondaryPointCountRange=randomPick(random, 1, 2, 3) .. 2)
     }
 
     fun create(): Glyph {
@@ -259,8 +283,13 @@ class FontGenerator(val glyphGenerator: GlyphGenerator) {
         }
 
         val punctuationGlyphGenerator = glyphGenerator.punctuationGlyphGenerator()
-        for(key in listOf("_point", "_comma", "_colon", "_semicolon", "_exclamation", "_question", "_plus", "_minus", "_mult", "_div", "_equal")) {
+        for(key in listOf("_point", "_comma", "_colon", "_semicolon", "_exclamation", "_question")) {
             glyphsMap[key] = createGlyph(punctuationGlyphGenerator)
+        }
+
+        val operatorGlyphGenerator = glyphGenerator.operatorGlyphGenerator()
+        for(key in listOf("_plus", "_minus", "_mult", "_div", "_equal")) {
+            glyphsMap[key] = createGlyph(operatorGlyphGenerator)
         }
 
         glyphsMap["_space"] = glyphGenerator.createSpace()
@@ -454,14 +483,39 @@ fun save(image: RenderedImage, name: String) {
 fun createExampleFonts(seed: Long = 0) {
     for (f in 1..9) {
         println("Generating font #$f")
-        val fontGenerator = FontGenerator(GlyphGenerator(Random(f.toLong() + seed)))
-        val font = fontGenerator.create()
+        createExampleFont("docs/fonts/example$f", GlyphGenerator(Random(f.toLong() + seed)))
+    }
 
-        val converter = GlyphToImageConverter()
-        for(entry in font.glyphs) {
-            val image = converter.convert(entry.value)
-            save(image, "docs/fonts/example$f/${entry.key}")
-        }
+    createExampleFont("docs/fonts/exampleLatin", GlyphGenerator(Random(seed),
+            width=5,
+            height=4,
+            gridBorderProbabilityRange=20.0 .. 20.0,
+            gridXProbabilityRange=0.0 .. 0.0,
+            gridYProbabilityRange=0.0 .. 0.0,
+            gridCellProbabilityRange=1.0 .. 1.0,
+
+            hasStartBaseline=false,
+            hasEndBaseline=false,
+            baselineY=0,
+
+            curveProbability=0.2,
+            curveUseGridProbability=0.9,
+            curveRangeX=-5 .. 5,
+            curveRangeY=-4 .. 4,
+
+            strokeCountRange=2 .. 3,
+            primaryPointCountRange= 2 .. 4,
+            secondaryPointCountRange=2 .. 3))
+}
+
+fun createExampleFont(path: String, glyphGenerator: GlyphGenerator) {
+    val fontGenerator = FontGenerator(glyphGenerator)
+    val font = fontGenerator.create()
+
+    val converter = GlyphToImageConverter()
+    for(entry in font.glyphs) {
+        val image = converter.convert(entry.value)
+        save(image, "$path/${entry.key}")
     }
 }
 
