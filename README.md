@@ -23,7 +23,6 @@ Each glyph is guaranteed to be distinct from all the other glyphs in the same fo
 * add rule to prefer going forward
 * add probability to move next stroke in the same (similar) direction
 * optionally create upper/lower case variants of letters
-* create bracket glyphs (optionally symmetrical, special baseline handling)
 * diacritic glyphs
 * support subsets (e.g. vowels) to follow separate rules (e.g. to be diacritics)
 * create TTF font
