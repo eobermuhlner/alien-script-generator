@@ -19,7 +19,7 @@ Have a look at the [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-gen
 They show the two classical texts to show simple fonts: "The quick brown fox" and "Lorem ipsum".
 See whether you can spot the two numbers in the text (hint: they are surrounded by symmetrical brackets).
 
-Each glyph is guaranteed to be distinct from all the other glyphs in the same font by pre-rendering and comparing pixel-wise during construction of the font. Unfortunately this can still produce visually very similar glyphs to us humans, but rest assured - the aliens have much more accurate visual perception and laugh at our problems to distinguish them.
+Each glyph is guaranteed to be distinct from all the other glyphs in the same font by pre-rendering and comparing pixel-wise during construction of the font. Unfortunately this can still produce visually very similar glyphs to us humans, but rest assured - the aliens have much more accurate visual perception and laugh at our problems to read their language.
 
 ## Enhancement Ideas
 
