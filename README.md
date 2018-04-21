@@ -12,8 +12,14 @@ The following examples are automatically generated with the first 9 random seeds
 Each example has fairly consistent rules used to generate the glyphs for this language.
 The rules for digits vary slightly from the rules for letters.
 Punctuation glyphs are much simpler than normal letters but still follow similar construction rules.
+Operator glyphs are a bit more complex than punctuation glyphs.
+Three types of symmetrical brackets are available.
 
-Each glyph is guaranteed to be distinct from all the other glyphs in the same font by pre-rendering and comparing pixel-wise during construction of the font. Unfortunately this can still produce visually very similar glyphs to us humans, but rest assured - the aliens have much more accurate visual perception and laugh at our problems to distinguish them.
+Have a look at the [Lorem Ipsum](https://eobermuhlner.github.io/alien-script-generator/fonts/example1/example.html) links for each example.
+They show the two classical texts to show simple fonts: "The quick brown fox" and "Lorem ipsum".
+See whether you can spot the two numbers in the text (hint: they are surrounded by symmetrical brackets).
+
+Each glyph is guaranteed to be distinct from all the other glyphs in the same font by pre-rendering and comparing pixel-wise during construction of the font. Unfortunately this can still produce visually very similar glyphs to us humans, but rest assured - the aliens have much more accurate visual perception and laugh at our problems to read their language.
 
 ## Enhancement Ideas
 
@@ -22,8 +28,8 @@ Each glyph is guaranteed to be distinct from all the other glyphs in the same fo
 * add rule to avoid crossing lines
 * add rule to prefer going forward
 * add probability to move next stroke in the same (similar) direction
+* recursive construction of glyphs (similar to Korean, Devanagari)
 * optionally create upper/lower case variants of letters
-* create bracket glyphs (optionally symmetrical, special baseline handling)
 * diacritic glyphs
 * support subsets (e.g. vowels) to follow separate rules (e.g. to be diacritics)
 * create TTF font
